@@ -26,8 +26,8 @@ function getBathValue() {
     var location = document.getElementById("uiLocations");
     var estPrice = document.getElementById("uiEstimatedPrice");
   
-    // var url = "http://127.0.0.1:5000/predict_home_price"; //Use this if you are NOT using nginx which is first 7 tutorials
-    var url = "http://localhost:8000/predict"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
+    var url = "https://tusharrj-predict-home-price.hf.space/predict"; //using hugging face docker
+    //var url = "http://localhost:8000/predict"; // FastApi
   
     $.ajax({
       type: 'POST',
@@ -53,8 +53,8 @@ function getBathValue() {
   
   function onPageLoad() {
     console.log( "document loaded" );
-    // var url = "http://127.0.0.1:5000/get_location_names"; // Use this if you are NOT using nginx which is first 7 tutorials
-    var url = "http://localhost:8000/get_location_names"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
+    var url = "https://tusharrj-predict-home-price.hf.space/get_location_names"; // using hugging face docker
+    //var url = "http://localhost:8000/get_location_names"; // FastApi
     $.get(url,function(data, status) {
         console.log("got response for get_location_names request");
         if(data) {
